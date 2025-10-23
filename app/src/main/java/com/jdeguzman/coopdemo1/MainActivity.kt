@@ -40,4 +40,40 @@ fun AlertDialogDemoScreen() {
         }
     }
 
+    if (showDialog) {
+        AlertDialog(
+            onDismissRequest = {
+                showDialog = false
+            },
+
+            title = {
+                Text("Demo Dialog")
+            },
+
+            text = {
+                Text("This is a simple AlertDialog in Jetpack Compose.")
+            },
+
+            confirmButton = {
+                Button(
+                    onClick = {
+                        showDialog = false
+                    }
+                ) {
+                    Text("OK")
+                }
+            },
+
+            dismissButton = {
+                TextButton(
+                    onClick = {
+                        showDialog = false
+                    }
+                ) {
+                    Text("Cancel")
+                }
+            }
+        )
+    }
+
 }
